@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --colorbezh: #d7b894;
+  --colorbrown: #604b44;
+  --colorgur: #0a5f6f;
+  --colorf3: #f3f3f3;
+  --colorblue: #141d48;
+  --colorred: #d04849;
+  --colorgreen: #669a7f;
+  --colorgrey: #383839;
+}
+
+body {
+  background-color: var(--colorgrey);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  /* border: #fff 1px solid; */
+}
+
+.container {
+  width: 65%;
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoFrame {
+  width: 160px;
+  height: 60px;
+}
+
+.navul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+}
+
+.navli {
+  padding: 4px 8px;
+}
+
+.navli a {
+  padding: 4px 15px;
+  font-size: 18px;
+  color: var(--colorf3);
+  text-decoration: none;
+}
+
+.listing {
+  position: relative;
+}
+
+#formActivating,
+#carListingForm > button {
+  padding: 10px 35px;
+  border: 1px solid var(--colorgreen);
+  border-radius: 12px;
+  font-weight: 500;
+  color: var(--colorf3);
+  /* background: rgb(10, 95, 111); */
+  background: linear-gradient(
+    126deg,
+    rgba(10, 95, 111, 1) 15%,
+    rgba(47, 99, 101, 1) 42%,
+    rgba(7, 42, 48, 1) 91%
+  );
+  background-size: 200% 200%;
+  transition: all 150ms ease-in-out;
+}
+
+#formActivating:hover,
+#carListingForm > button:hover {
+  border: 1px solid #0f7e95;
+  background-position: -50px;
+}
+
+.listing > button:focus {
+  /* background: rgb(10, 95, 111); */
+  background: linear-gradient(
+    126deg,
+    rgba(10, 95, 111, 1) 7%,
+    rgba(47, 99, 101, 1) 63%,
+    rgba(7, 42, 48, 1) 81%
+  );
+}
+
+#hiddenform {
+  position: absolute;
+  width: 300px;
+  /* height: 400px; */
+  right: 0;
+  animation: fadeinform 400ms 1;
+  border-radius: 15px;
+  border: 1px solid var(--colorgur);
+  padding: 20px;
+  background-color: #1e1e1e;
+}
+
+#carListingForm {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+#carListingForm > * {
+  margin: 1vh 0;
+}
+
+#hiddenform label {
+  color: white;
+}
+
+.formrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formrow > *:last-child {
+  /* width: 100%; */
+}
+
+#make,
+#model,
+#fileInput,
+#fuel,
+#transmition,
+#gears {
+  /* appearance: none; */
+  /* border: 2px solid #D04849; */
+  background-color: #383839;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.makeoption {
+  appearance: none;
+  text-indent: 15px;
+  padding: 15px;
+  margin: 15px;
+  background-color: #1e1e1e;
+  color: white;
+}
+
+#formmaxspeed {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin: 0;
+}
+
+@keyframes fadeinform {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeoutform {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+}
+
+.hiddenform {
+  position: absolute;
+  display: none;
+  animation: fadeoutform 400ms;
+}
+
+.showform {
+  display: block;
+  z-index: 6;
+}
